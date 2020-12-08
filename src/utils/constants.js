@@ -1,6 +1,6 @@
-import KeyMirror from 'keymirror';
+const KeyMirror = require('keymirror');
 
-export const PATHS = {
+const PATHS = {
 	// jsx paths
 	root: '/',
 
@@ -17,9 +17,9 @@ export const PATHS = {
 	register: '/register'
 };
 
-export const SEX = { Male: 0, Female: 1 };
+const SEX = { Male: 0, Female: 1 };
 
-export const STATES = {
+const STATES = {
 	Alabama: 'AL',
 	Alaska: 'AK',
 	Arizona: 'AZ',
@@ -72,32 +72,32 @@ export const STATES = {
 	Wyoming: 'WY'
 };
 
-export const ROLES = {
+const ROLES = {
 	0: 'Admin',
 	1: 'Doctor',
 	2: 'Patient'
 };
 
-export const APPOINTMENT_STATUS = {
+const APPOINTMENT_STATUS = {
 	0: 'Pending Approval',
 	1: 'Approved',
 	2: 'No Show',
 	3: 'Completed'
 };
 
-export const APPOINTMENT_STATUS_COLORS = {
+const APPOINTMENT_STATUS_COLORS = {
 	0: 'yellow',
 	1: 'lightblue',
 	2: 'lightcoral',
 	3: 'lightgreen'
 };
 
-export const BLOG_STATUS = {
+const BLOG_STATUS = {
 	0: 'Draft',
 	1: 'Publish'
 };
 
-export const HEADER_TABS = [
+const HEADER_TABS = [
 	{
 		label: 'Home',
 		path: PATHS.home
@@ -124,7 +124,7 @@ export const HEADER_TABS = [
 	}
 ];
 
-export const STATUS = KeyMirror({
+const STATUS = KeyMirror({
 	ERROR: null,
 	INFO: null,
 	PENDING: null,
@@ -133,7 +133,7 @@ export const STATUS = KeyMirror({
 	WARNING: null
 });
 
-export const MONTHS = {
+const MONTHS = {
 	0: 'Jan',
 	1: 'Feb',
 	2: 'Mar',
@@ -146,4 +146,17 @@ export const MONTHS = {
 	9: 'Oct',
 	10: 'Nov',
 	11: 'Dec'
+};
+
+module.exports = {
+	APPOINTMENT_STATUS,
+	APPOINTMENT_STATUS_COLORS,
+	BLOG_STATUS,
+	HEADER_TABS,
+	MONTHS,
+	PATHS,
+	ROLES,
+	SEX,
+	STATES,
+	STATUS
 };

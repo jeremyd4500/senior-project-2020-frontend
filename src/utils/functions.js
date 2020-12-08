@@ -1,8 +1,8 @@
-import { MONTHS } from 'utils';
+const { MONTHS } = require('./constants');
 
 require('dotenv').config();
 
-export const getSelectMenuOptionsArray = (options = []) => {
+const getSelectMenuOptionsArray = (options = []) => {
 	return options.map((option) => {
 		return {
 			label: option,
@@ -11,7 +11,7 @@ export const getSelectMenuOptionsArray = (options = []) => {
 	});
 };
 
-export const getSelectMenuOptionsObject = (options = {}) => {
+const getSelectMenuOptionsObject = (options = {}) => {
 	return Object.keys(options).map((key) => {
 		return {
 			label: key,
@@ -19,7 +19,7 @@ export const getSelectMenuOptionsObject = (options = {}) => {
 		};
 	});
 };
-export const getSelectMenuOptionsObjectReverse = (options = {}) => {
+const getSelectMenuOptionsObjectReverse = (options = {}) => {
 	return Object.keys(options).map((key) => {
 		return {
 			label: options[key],
@@ -28,7 +28,7 @@ export const getSelectMenuOptionsObjectReverse = (options = {}) => {
 	});
 };
 
-export const formatDate = (dateObj) => {
+const formatDate = (dateObj) => {
 	const date = new Date(dateObj);
 	const formattedDate = `${
 		MONTHS[date.getMonth()]
@@ -58,12 +58,21 @@ export const formatDate = (dateObj) => {
 	};
 };
 
-export const getPort = () =>
+const getPort = () =>
 	process.env.PORT ? process.env.PORT : process.env.DEV_PORT;
 
-export const getAppHost = (extended_path) => {
+const getAppHost = (extended_path) => {
 	const API_URL = process.env.LIVE
 		? process.env.PUBLIC_API_URL
 		: process.env.LOCAL_API_URL;
 	return `${API_URL}${extended_path}`;
+};
+
+module.exports = {
+	formatDate,
+	getAppHost,
+	getPort,
+	getSelectMenuOptionsArray,
+	getSelectMenuOptionsObject,
+	getSelectMenuOptionsObjectReverse
 };
