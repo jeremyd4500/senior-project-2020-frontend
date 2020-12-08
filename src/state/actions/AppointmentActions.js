@@ -2,7 +2,7 @@ import keyMirror from 'keymirror';
 import axios from 'axios';
 import moment from 'moment';
 import { APP_ACTIONS } from 'state/actions';
-import { STATUS } from 'utils';
+import { getAppHost, STATUS } from 'utils';
 
 export const APPOINTMENT_ACTIONS = keyMirror({
 	DELETE_APPOINTMENT: null,
@@ -21,7 +21,7 @@ export const APPOINTMENT_ACTIONS_FAILURE = keyMirror({
 export const fetchAppointments = () => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/appointment/`;
+		const path = getAppHost('/appointment/');
 		return new Promise((resolve, reject) => {
 			axios
 				.get(path, {
@@ -71,7 +71,7 @@ export const postAppointment = (data) => {
 			return today.diff(old, 'years');
 		};
 
-		const path = `http://localhost:8000/appointment/`;
+		const path = getAppHost('/appointment/');
 		return new Promise((resolve, reject) => {
 			axios
 				.post(
@@ -136,7 +136,7 @@ export const postAppointment = (data) => {
 export const deleteAppointment = (appointment_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/appointment/${appointment_id}`;
+		const path = getAppHost(`/appointment/${appointment_id}`);
 		return new Promise((resolve, reject) => {
 			axios
 				.delete(path, {
@@ -186,7 +186,7 @@ export const deleteAppointment = (appointment_id) => {
 export const updateAppointment = (data, appointment_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/appointment/${appointment_id}`;
+		const path = getAppHost(`/appointment/${appointment_id}`);
 		return new Promise((resolve, reject) => {
 			axios
 				.put(

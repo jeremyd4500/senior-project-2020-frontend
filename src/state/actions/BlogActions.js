@@ -1,7 +1,7 @@
 import keyMirror from 'keymirror';
 import axios from 'axios';
 import { APP_ACTIONS } from 'state/actions';
-import { STATUS } from 'utils';
+import { getAppHost, STATUS } from 'utils';
 
 export const BLOG_ACTIONS = keyMirror({
 	DELETE_BLOG: null,
@@ -20,7 +20,7 @@ export const BLOG_ACTIONS_FAILURE = keyMirror({
 export const fetchBlogs = () => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/blog/`;
+		const path = getAppHost('/blog/');
 		return new Promise((resolve, reject) => {
 			axios
 				.get(path, {
@@ -65,7 +65,7 @@ export const postBlog = (data) => {
 			}
 			return result;
 		};
-		const path = `http://localhost:8000/blog/`;
+		const path = getAppHost('/blog/');
 		return new Promise((resolve, reject) => {
 			const formData = new FormData();
 			formData.append('title', data.title),
@@ -123,7 +123,7 @@ export const postBlog = (data) => {
 export const deleteBlog = (blog_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/blog/${blog_id}/`;
+		const path = getAppHost(`/blog/${blog_id}/`);
 		return new Promise((resolve, reject) => {
 			axios
 				.delete(path, {
@@ -172,7 +172,7 @@ export const deleteBlog = (blog_id) => {
 export const updateBlog = (data, blog_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/blog/${blog_id}/`;
+		const path = getAppHost(`/blog/${blog_id}/`);
 		return new Promise((resolve, reject) => {
 			axios
 				.put(

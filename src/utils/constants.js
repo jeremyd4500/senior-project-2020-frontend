@@ -118,10 +118,6 @@ export const HEADER_TABS = [
 		label: 'Reports & Vitals',
 		path: PATHS.reports
 	},
-	// {
-	// 	label: 'Videos',
-	// 	path: PATHS.videos
-	// },
 	{
 		label: 'Account',
 		path: PATHS.account

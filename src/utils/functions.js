@@ -1,5 +1,7 @@
 import { MONTHS } from 'utils';
 
+require('dotenv').config();
+
 export const getSelectMenuOptionsArray = (options = []) => {
 	return options.map((option) => {
 		return {
@@ -54,4 +56,14 @@ export const formatDate = (dateObj) => {
 		date: formattedDate,
 		time: time
 	};
+};
+
+export const getPort = () =>
+	process.env.PORT ? process.env.PORT : process.env.DEV_PORT;
+
+export const getAppHost = (extended_path) => {
+	const API_URL = process.env.LIVE
+		? process.env.PUBLIC_API_URL
+		: process.env.LOCAL_API_URL;
+	return `${API_URL}${extended_path}`;
 };

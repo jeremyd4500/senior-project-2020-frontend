@@ -24,19 +24,6 @@ export const appNavigate = (path, router, options) => {
 	};
 };
 
-// export const addAppAlert = (alertType, clears, status, message) => {
-// 	return (dispatch) => {
-// 		dispatch({
-// 			type: APP_ACTIONS.ALERT_ADD,
-// 			alert: alertType,
-// 			status: status,
-// 			clears: clears,
-// 			message: message
-// 		});
-// 		return Promise.resolve();
-// 	};
-// };
-
 export const clearAlert = (alertType) => {
 	return (dispatch) => {
 		dispatch({

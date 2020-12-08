@@ -1,7 +1,7 @@
 import keyMirror from 'keymirror';
 import axios from 'axios';
 import { APP_ACTIONS } from 'state/actions';
-import { STATUS, PATHS } from 'utils';
+import { getAppHost, STATUS, PATHS } from 'utils';
 
 export const USER_ACTIONS = keyMirror({
 	AUTHENTICATE: null,
@@ -24,7 +24,7 @@ export const USER_ACTIONS_FAILURE = keyMirror({
 });
 
 export const authenticateUser = (data, navigateFunc) => {
-	const path = 'http://localhost:8000/auth/token/login/';
+	const path = getAppHost('/auth/token/login/');
 	return (dispatch) => {
 		return new Promise((resolve, reject) => {
 			axios
@@ -61,7 +61,7 @@ export const authenticateUser = (data, navigateFunc) => {
 };
 
 export const logout = (navigateFunc) => {
-	const path = 'http://localhost:8000/auth/token/logout/';
+	const path = getAppHost('/auth/token/logout/');
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
 		return new Promise((resolve, reject) => {
@@ -95,7 +95,7 @@ export const logout = (navigateFunc) => {
 };
 
 export const registerUser = (data, navigateFunc) => {
-	const path = 'http://localhost:8000/auth/users/';
+	const path = getAppHost('/auth/users/');
 	return (dispatch) => {
 		return new Promise((resolve, reject) => {
 			axios
@@ -163,7 +163,7 @@ export const fetchToken = () => {
 };
 
 export const fetchUserInfo = () => {
-	const path = 'http://localhost:8000/auth/users/me/';
+	const path = getAppHost('/auth/users/me/');
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
 		return new Promise((resolve, reject) => {
@@ -219,7 +219,7 @@ export const fetchUserInfo = () => {
 };
 
 export const fetchUsers = (role, append = false) => {
-	const path = `http://localhost:8000/auth/roles/?user_role=${role}`;
+	const path = getAppHost(`/auth/roles/?user_role=${role}`);
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
 		return new Promise((resolve, reject) => {
@@ -262,7 +262,7 @@ export const fetchUsers = (role, append = false) => {
 };
 
 export const updateUser = (data) => {
-	const path = 'http://localhost:8000/auth/users/me/';
+	const path = getAppHost('/auth/users/me/');
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
 		return new Promise((resolve, reject) => {

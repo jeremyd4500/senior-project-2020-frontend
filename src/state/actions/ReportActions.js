@@ -1,7 +1,7 @@
 import keyMirror from 'keymirror';
 import axios from 'axios';
 import { APP_ACTIONS } from 'state/actions';
-import { STATUS } from 'utils';
+import { getAppHost, STATUS } from 'utils';
 
 export const REPORT_ACTIONS = keyMirror({
 	DELETE_REPORT: null,
@@ -20,7 +20,7 @@ export const REPORT_ACTIONS_FAILURE = keyMirror({
 export const fetchReports = () => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/report/`;
+		const path = getAppHost('/report/');
 		return new Promise((resolve, reject) => {
 			axios
 				.get(path, {
@@ -53,7 +53,7 @@ export const fetchReports = () => {
 export const postReport = (data) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/report/`;
+		const path = getAppHost('/report/');
 		return new Promise((resolve, reject) => {
 			const formData = new FormData();
 			formData.append('bp', data.bp);
@@ -113,7 +113,7 @@ export const postReport = (data) => {
 export const deleteReport = (report_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/report/${report_id}/`;
+		const path = getAppHost(`/report/${report_id}/`);
 		return new Promise((resolve, reject) => {
 			axios
 				.delete(path, {
@@ -162,7 +162,7 @@ export const deleteReport = (report_id) => {
 export const updateReport = (data, report_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/blog/${report_id}/`;
+		const path = getAppHost(`/blog/${report_id}/`);
 		return new Promise((resolve, reject) => {
 			axios
 				.put(

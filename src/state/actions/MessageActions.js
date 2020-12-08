@@ -1,7 +1,7 @@
 import keyMirror from 'keymirror';
 import axios from 'axios';
 import { APP_ACTIONS } from 'state/actions';
-import { STATUS } from 'utils';
+import { getAppHost, STATUS } from 'utils';
 
 export const MESSAGE_ACTIONS = keyMirror({
 	CLEAR_MESSAGES: null,
@@ -28,7 +28,7 @@ export const MESSAGE_ACTIONS_FAILURE = keyMirror({
 export const fetchMessages = () => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = 'http://localhost:8000/messages/inbox/';
+		const path = getAppHost('/messages/inbox/');
 		return new Promise((resolve, reject) => {
 			axios
 				.get(path, {
@@ -62,7 +62,7 @@ export const fetchMessages = () => {
 export const fetchThreadMessages = (thread_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/messages/message/thread/${thread_id}/`;
+		const path = getAppHost(`/messages/message/thread/${thread_id}/`);
 		return new Promise((resolve, reject) => {
 			axios
 				.get(path, {
@@ -105,7 +105,7 @@ export const fetchThreadMessages = (thread_id) => {
 export const fetchThreadMessagesList = (thread_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/messages/message/thread/${thread_id}/`;
+		const path = getAppHost(`/messages/message/thread/${thread_id}/`);
 		return new Promise((resolve, reject) => {
 			axios
 				.get(path, {
@@ -150,7 +150,7 @@ export const fetchThreadMessagesList = (thread_id) => {
 export const sendMessage = (data, user_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/messages/message/thread/${user_id}/send/`;
+		const path = getAppHost(`/messages/message/thread/${user_id}/send/`);
 		return new Promise((resolve, reject) => {
 			axios
 				.post(
@@ -208,7 +208,9 @@ export const sendMessage = (data, user_id) => {
 export const replyMessage = (data, thread_id, user_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/messages/message/thread/${thread_id}/${user_id}/send/`;
+		const path = getAppHost(
+			`/messages/message/thread/${thread_id}/${user_id}/send/`
+		);
 		return new Promise((resolve, reject) => {
 			axios
 				.post(
@@ -266,7 +268,7 @@ export const replyMessage = (data, thread_id, user_id) => {
 export const deleteThread = (thread_id) => {
 	return (dispatch, getStore) => {
 		const { token } = getStore().user;
-		const path = `http://localhost:8000/messages/thread/${thread_id}/delete/`;
+		const path = getAppHost(`/messages/thread/${thread_id}/delete/`);
 		return new Promise((resolve, reject) => {
 			axios
 				.post(

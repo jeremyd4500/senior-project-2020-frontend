@@ -2,6 +2,9 @@ const merge = require('webpack-merge');
 const path = require('path');
 const common = require('./webpack.common.js');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const { getPort } = require('./src/utils');
+
+require('dotenv').config();
 
 module.exports = merge(common, {
 	mode: 'development',
@@ -20,7 +23,7 @@ module.exports = merge(common, {
 		historyApiFallback: true,
 		host: 'localhost',
 		hot: true,
-		port: 9000,
+		port: getPort(),
 		publicPath: '/',
 		stats: 'errors-only',
 		watchContentBase: true
