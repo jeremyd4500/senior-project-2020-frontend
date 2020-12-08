@@ -1,5 +1,7 @@
 const { MONTHS } = require('./constants');
 
+require('dotenv').config();
+
 const getSelectMenuOptionsArray = (options = []) => {
 	return options.map((option) => {
 		return {
