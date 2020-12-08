@@ -46,7 +46,9 @@ module.exports = {
 			hash: true,
 			inject: true
 		}),
-		new DotenvPlugin()
+		new DotenvPlugin({
+			systemvars: false
+		})
 	],
 	module: {
 		rules: [
