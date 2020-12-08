@@ -60,6 +60,10 @@ const getPort = () =>
 	process.env.PORT ? process.env.PORT : process.env.DEV_PORT;
 
 const getAppHost = (extended_path) => {
+	console.log(process.env);
+	console.log(process.env.LIVE);
+	console.log(process.env.PUBLIC_API_URL);
+	console.log(process.env.LOCAL_API_URL);
 	const API_URL = process.env.LIVE
 		? process.env.PUBLIC_API_URL
 		: process.env.LOCAL_API_URL;
