@@ -3,6 +3,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const DotenvPlugin = require('dotenv-webpack');
 
 module.exports = {
 	target: 'web',
@@ -44,7 +45,8 @@ module.exports = {
 			},
 			hash: true,
 			inject: true
-		})
+		}),
+		new DotenvPlugin()
 	],
 	module: {
 		rules: [

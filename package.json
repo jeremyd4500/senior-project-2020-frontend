@@ -2,10 +2,10 @@
 	"name": "senior-project-2020-frontend",
 	"version": "1.0.0",
 	"description": "The front end for the senior project",
-	"main": "index.js",
+	"main": "./src/server.js",
 	"scripts": {
 		"build": "webpack --config webpack.prod.js",
-		"dev": "webpack-dev-server --hot --config webpack.dev.js",
+		"dev": "webpack-dev-server --open --config webpack.dev.js",
 		"format": "prettier --write \"**/**.{js,jsx,json,css,less}\"",
 		"heroku-postbuild": "npm run build",
 		"start": "node src/server.js"
@@ -30,6 +30,7 @@
 		"cors": "^2.8.5",
 		"css-loader": "^3.2.0",
 		"dotenv": "^8.2.0",
+		"dotenv-webpack": "^6.0.0",
 		"express": "^4.17.1",
 		"file-loader": "^4.2.0",
 		"html-loader": "^0.5.5",

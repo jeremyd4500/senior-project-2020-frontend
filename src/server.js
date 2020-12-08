@@ -5,7 +5,6 @@ const logger = require('morgan');
 const path = require('path');
 const { getPort } = require('./utils');
 
-require('dotenv').config();
 const app = express();
 
 app.use(cors({ origin: true }));
