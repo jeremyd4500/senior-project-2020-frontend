@@ -47,7 +47,7 @@ module.exports = {
 			inject: true
 		}),
 		new DotenvPlugin({
-			systemvars: false
+			systemvars: true
 		})
 	],
 	module: {
