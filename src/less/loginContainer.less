@@ -1,0 +1,91 @@
+.LoginContainer {
+	width: 100%;
+	margin: 5%;
+	padding: 5%;
+	background-color: white;
+	border-radius: 10px;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	&__title {
+		font-size: 26pt;
+		font-weight: 600;
+		color: black;
+		margin: 0px;
+		margin-bottom: 30px;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+
+		&-field {
+			margin-bottom: 30px;
+
+			:last-child {
+				margin-bottom: 0px;
+			}
+
+			display: flex;
+			flex-direction: column;
+
+			&-label {
+				color: black;
+				font-size: 10pt;
+				font-weight: 600;
+			}
+
+			&-input {
+				padding: 10px;
+				font-size: 12pt;
+				background: transparent;
+				border: none;
+				border-bottom: 3px solid black;
+				color: black;
+
+				::placeholder {
+					color: grey;
+				}
+			}
+		}
+
+		&-help {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 30px;
+			margin-top: -20px;
+
+			&-btn {
+				color: black;
+				font-size: 14pt;
+				font-weight: 600;
+				background: none;
+				border: none;
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+
+				&:hover {
+					color: dimgrey;
+				}
+			}
+		}
+
+		&-submit {
+			width: 45%;
+			padding: 5px;
+			border-radius: 20px;
+			color: white;
+			background-color: #4f5ada;
+			border-color: #3240d4;
+			font-size: 20px;
+			text-align: center;
+			text-decoration: none;
+
+			&:hover {
+				background-color: #4f5adae0;
+				border-color: #4f5ada;
+			}
+		}
+	}
+}

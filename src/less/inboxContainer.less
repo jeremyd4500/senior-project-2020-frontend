@@ -1,0 +1,234 @@
+.InboxContainer {
+	height: 790px;
+	display: flex;
+	flex-direction: column;
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: 20px;
+
+		&-button {
+			text-decoration: none;
+			padding: 5px 20px;
+			margin-right: 20px;
+			border-radius: 20px;
+			color: white;
+			background-color: #4f5ada;
+			border-color: #3240d4;
+			font-size: 20px;
+			text-align: center;
+
+			&:hover {
+				background-color: #4f5adae0;
+				border-color: #4f5ada;
+			}
+
+			&:last-child {
+				margin-right: 0px;
+			}
+		}
+	}
+
+	&__interface {
+		display: flex;
+		width: 100%;
+		height: 728px;
+		border: 2px solid black;
+	}
+
+	&__inbox-list {
+		width: 55%;
+		max-width: 55%;
+		height: 100%;
+		border-right: 2px solid black;
+		overflow-y: auto;
+	}
+
+	&__message-box {
+		height: 100%;
+		width: 100%;
+
+		&-no-selection {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			text-align: center;
+			padding: 0 20px;
+		}
+	}
+
+	&__modal {
+		&-header {
+			margin-top: 0;
+			font-size: 16px;
+		}
+		&-textarea {
+			resize: none;
+			border-radius: 5px;
+			padding: 10px;
+			width: calc(100% - 20px);
+			height: 200px;
+		}
+	}
+}
+
+.InboxView {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&__none {
+		margin: 0px;
+	}
+
+	&__see-more {
+		margin-bottom: 0;
+	}
+}
+
+.MessageView {
+	margin-bottom: 10px;
+	text-decoration: none;
+	border: 1px solid black;
+	background: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 20px;
+	border-radius: 5px;
+
+	&:hover {
+		cursor: pointer;
+		background-color: #d4d4d4;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.MessageListView {
+	border: none;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	width: 100%;
+	background: rgb(236, 236, 236);
+	padding: 10px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: baseline;
+
+	&:hover {
+		cursor: pointer;
+		background: rgb(179, 179, 179);
+	}
+
+	&__sender {
+		margin: 0;
+		padding: 0;
+	}
+
+	&__middle {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__content {
+		margin: 0;
+		max-width: 100%;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.NewMessageView {
+	height: 100%;
+	width: 100%;
+
+	.SelectMenu {
+		width: 100%;
+		border: none;
+		border-bottom: 1px solid black;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__subject {
+		margin: 0;
+		padding: 0px 10px;
+		width: calc(100% - 20px);
+		border: none;
+		border-bottom: 1px solid black;
+		font-size: medium;
+		max-height: 40px;
+		height: 40px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__message {
+		border: none;
+		resize: none;
+		padding: 10px;
+		width: calc(100% - 20px);
+		height: 550px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__footer {
+		width: 100%;
+		height: 70px;
+		border-top: 1px solid black;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		&-button {
+			margin-right: 10px;
+			text-decoration: none;
+			padding: 5px 20px;
+			border-radius: 20px;
+			color: white;
+			background-color: #4f5ada;
+			border-color: #3240d4;
+			font-size: 20px;
+			text-align: center;
+
+			&:hover {
+				background-color: #4f5adae0;
+				border-color: #4f5ada;
+			}
+
+			&.cancel {
+				padding: 5px 20px;
+				border-radius: 20px;
+				color: black;
+				background-color: transparent;
+				border: 2px solid black;
+				font-size: 20px;
+				text-align: center;
+				text-decoration: none;
+
+				&:hover {
+					color: dimgray;
+					border: 2px solid dimgray;
+					background-color: lightgrey;
+				}
+			}
+		}
+	}
+}

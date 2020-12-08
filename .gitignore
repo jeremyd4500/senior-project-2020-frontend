@@ -1,0 +1,15 @@
+# node.js
+
+node_modules
+.vscode
+debug.log
+
+# build/output directories
+
+build
+dist
+out
+
+# other
+
+.DS_Store

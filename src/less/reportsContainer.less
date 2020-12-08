@@ -1,0 +1,201 @@
+.ReportsContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	border: 2px solid black;
+	border-radius: 5px;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&-label {
+			text-decoration: none;
+			font-family: Bebas;
+			font-size: xx-large;
+			margin: 0;
+		}
+
+		&-button {
+			text-decoration: none;
+			padding: 5px 20px;
+			border-radius: 20px;
+			color: white;
+			background-color: #4f5ada;
+			border-color: #3240d4;
+			font-size: 20px;
+			text-align: center;
+
+			&:hover {
+				background-color: #4f5adae0;
+				border-color: #4f5ada;
+			}
+		}
+	}
+
+	&__list {
+		margin-top: 20px;
+
+		&-item {
+			&-footer {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+
+				&-submit {
+					margin: 20px;
+					margin-left: 0;
+					padding: 5px 30px;
+					border-radius: 20px;
+					color: white;
+					background-color: #4f5ada;
+					border: 2px solid #3240d4;
+					font-size: 20px;
+					text-align: center;
+					text-decoration: none;
+
+					&:hover {
+						background-color: #4f5adae0;
+						border: 2px solid #4f5ada;
+					}
+				}
+
+				&-cancel {
+					margin: 20px;
+					margin-left: 0;
+					padding: 5px 30px;
+					border-radius: 20px;
+					color: black;
+					background-color: transparent;
+					border: 2px solid black;
+					font-size: 20px;
+					text-align: center;
+					text-decoration: none;
+
+					&:hover {
+						color: dimgray;
+						border: 2px solid dimgray;
+						background-color: lightgrey;
+					}
+				}
+			}
+		}
+
+		&-group {
+			display: flex;
+			flex-direction: column;
+
+			&-section {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+
+				&-button {
+					text-decoration: none;
+					padding: 5px 20px;
+					border-radius: 20px;
+					color: white;
+					background-color: #4f5ada;
+					border-color: #3240d4;
+					font-size: 20px;
+					text-align: center;
+
+					&:hover {
+						background-color: #4f5adae0;
+						border-color: #4f5ada;
+					}
+				}
+
+				&-item {
+					&-button {
+						font-family: Bebas;
+						padding: 5px 20px;
+						border-radius: 20px;
+						color: black;
+						background-color: transparent;
+						border: 2px solid black;
+						font-size: 18px;
+						text-align: center;
+						text-decoration: none;
+
+						&:hover {
+							color: dimgray;
+							border: 2px solid dimgray;
+							background-color: lightgrey;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__modal {
+		&-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 20px;
+			max-height: 40px;
+
+			&-label {
+				margin: 0;
+				height: 40px;
+				display: flex;
+				align-items: center;
+				font-size: large;
+			}
+
+			&-input {
+				height: calc(40px - 4px);
+				width: calc(50% - 20px - 2px);
+				padding: 0px 10px;
+			}
+
+			.SelectMenu {
+				height: 40px;
+				width: 50%;
+			}
+		}
+	}
+}
+
+.ReportsView {
+	&__none {
+		margin: 0px;
+	}
+
+	&__list {
+		&-report {
+			margin-bottom: 10px;
+			text-decoration: none;
+			border: 1px solid black;
+			background: none;
+			display: flex;
+			justify-content: space-between;
+			padding: 10px 20px;
+			border-radius: 5px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&-field {
+				margin: 0;
+				padding: 0;
+				text-align: left;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+				&-icon {
+				}
+			}
+		}
+	}
+
+	&__see-more {
+		margin-bottom: 0;
+	}
+}

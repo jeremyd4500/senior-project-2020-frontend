@@ -1,0 +1,48 @@
+.toast-message {
+	display: flex;
+	flex-direction: row;
+
+	bottom: 90px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	color: white;
+	max-width: 300px;
+	min-height: 75px;
+	position: fixed;
+	width: 300px;
+	z-index: 10;
+
+	aside {
+		display: flex;
+		align-items: center;
+		background: white;
+		color: @primary-blue;
+		padding: 0 15px;
+	}
+
+	main {
+		display: flex;
+		align-items: center;
+		font-family: Arial, Helvetica, sans-serif;
+		background: @primary-blue;
+		opacity: 0.8;
+		padding: 15px 20px;
+		width: 100%;
+		font-size: large;
+	}
+
+	&.SUCCESS {
+		border-color: green;
+	}
+
+	&.ERROR {
+		border-color: red;
+	}
+
+	&.INFO {
+		border-color: blue;
+	}
+
+	&.WARNING {
+		border-color: orange;
+	}
+}
